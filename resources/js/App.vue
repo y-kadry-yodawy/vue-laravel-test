@@ -8,7 +8,7 @@
 export default {
     data() {
         return {
-            count: 0,
+            count: this.$store.state.count,
             element: 'Magic Button'
         }
     }  
