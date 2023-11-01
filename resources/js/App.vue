@@ -1,7 +1,7 @@
 <template>
     <h1> This is a {{element}} that increments </h1>
     <button @click="increment"> Count: {{this.$store.state.count}}</button>
-    <button @click="increment"> Count: {{this.$store.state.count}}</button>
+    <p> {{this.$store.state.count}} </p>
 </template>
 
 <script>
