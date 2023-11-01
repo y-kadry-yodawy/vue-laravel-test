@@ -1,11 +1,19 @@
 <template>
-    <h1> Hello, Vuejs with Laravel </h1>
+    <h1> This is a {{element}} that increments </h1>
+    <button @click="count++"> Count: {{count}}</button>
 </template>
 
 <script>
-    export default {
-    setup() {
 
+export default {
+    data() {
+        return {
+            count: 0,
+            element: 'Magic Button'
         }
-    }
+    }  
+}
 </script>
+
+<style>
+</style>
