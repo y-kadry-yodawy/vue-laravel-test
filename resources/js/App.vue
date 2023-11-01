@@ -1,7 +1,7 @@
 <template>
     <h1> This is a {{element}} that increments </h1>
     <button @click="increment"> Count: {{count}}</button>
-    <p> {{countPlusLocalState}} </p>
+    <p> {{count}} </p>
 
     <table>
     <tr v-for="med in medicationNames">
@@ -25,21 +25,13 @@ export default {
     methods: {
         increment() {
             this.$store.commit('increment')
-            console.log(this.$store.state.count)
+            console.log(this.$store.state.count.count)
         }
     },
     computed: {
         ...mapState({
             // arrow functions can make the code very succinct!
-            count: state => state.count,
-
-            // passing the string value 'count' is same as `state => state.count`
-            countAlias: 'count',
-
-            // to access local state with `this`, a normal function must be used
-            countPlusLocalState (state) {
-            return state.count + this.localCount
-            }
+            count: state => state.count.count
         }),
         ...mapGetters([
             'medicationNames'
