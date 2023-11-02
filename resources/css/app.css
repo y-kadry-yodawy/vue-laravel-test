@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.popup-close-button-div {
+    text-align: right;
+}
+
+.popup-close-button {
+    overflow: hidden;
+    position: relative;
+    border: none;
+    padding: 0;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: transparent;
+    color: #1da1f2;
+    font: inherit;
+    text-indent: 100%;
+    cursor: pointer;
+
+    &:focus {
+        outline: solid 0 transparent;
+        box-shadow: 0 0 0 2px #8ed0f9
+    }
+
+    &:hover {
+        background: rgba(29, 161, 142, .1)
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        top: 15%;
+        left: calc(50% - .0625em);
+        width: .125em;
+        height: 70%;
+        border-radius: .125em;
+        transform: rotate(45deg);
+        background: currentcolor;
+        content: ''
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+.popup-action-button-div {
+    text-align: center;
+}
+
+.popup-action-button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: #5b77d5;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: white;
+    cursor: pointer;
+}
+
+.popup-body-div {
+    text-align: center;
+    margin: 20px 30px;
+    font-size: 24px;
+    font-weight: 900;
+    color: white;
+}
+
+.popup-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    transition: opacity 0.3s ease;
+}
+
+.popup-container {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    padding: 20px 30px;
+    background-color: #5b77d5;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    transition: all 0.3s ease;
+}
+
+.popup-header h3 {
+    margin-top: 0;
+    color: #42b983;
+}
+
+.popup-default-button {
+    float: right;
+}
+
+/*
+   * The following styles are auto-applied to elements with
+   * transition="modal" when their visibility is toggled
+   * by Vue.js.
+   *
+   * You can easily play with the modal transition by editing
+   * these styles.
+   */
+
+.popup-enter-from {
+    opacity: 0;
+}
+
+.popup-leave-to {
+    opacity: 0;
+}
+
+.popup-enter-from .popup-container,
+.popup-leave-to .popup-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

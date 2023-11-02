@@ -1,13 +1,9 @@
 <template>
-    <h1> This is a {{element}} that increments </h1>
-    <button @click="increment"> Count: {{count}}</button>
-    <p> {{count}} </p>
+    <button id="show-modal" @click="showPopup = true">Show Modal</button>
 
-    <table>
-    <tr v-for="med in medicationNames">
-        <th>{{ med }}</th>
-    </tr>
-    </table>
+    <teleport to="body">
+        <popup :show="showPopup" @close="showPopup = false"></popup>
+    </teleport>
 </template>
 
 <script>
@@ -15,12 +11,14 @@
 import { mapState } from 'vuex'
 import { mapGetters } from 'vuex'
 import { mapMutations } from 'vuex'
+import Popup from './modals/Popup.vue'
 
 export default {
     data() {
         return {
             element: 'Magic Button',
-            localCount: 5
+            localCount: 5,
+            showPopup: false
         }
     },
     methods: {
@@ -36,9 +34,11 @@ export default {
         ...mapGetters({
             medicationNames: 'medications/medicationNames'
         })
-    }
+    },
+    components: {
+        Popup
+    },
 }
 </script>
 
-<style>
-</style>
+<style></style>
