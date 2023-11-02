@@ -14,6 +14,7 @@
 
 import { mapState } from 'vuex'
 import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
     data() {
@@ -23,10 +24,9 @@ export default {
         }
     },
     methods: {
-        increment() {
-            this.$store.commit('increment')
-            console.log(this.$store.state.count.count)
-        }
+        ...mapMutations([
+            'increment' // map `this.add()` to `this.$store.commit('increment')`
+        ])
     },
     computed: {
         ...mapState({
