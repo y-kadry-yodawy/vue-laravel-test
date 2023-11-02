@@ -31,5 +31,6 @@ export const medicationsModule = {
         medicationNames(state) {
             return state.medications.map(({ name }) => name);
         }
-    }
+    },
+    namespaced: true
 }

@@ -24,18 +24,18 @@ export default {
         }
     },
     methods: {
-        ...mapMutations([
-            'increment' // map `this.add()` to `this.$store.commit('increment')`
-        ])
+        ...mapMutations({
+            increment: 'increment' // map `this.add()` to `this.$store.commit('increment')`
+        })
     },
     computed: {
         ...mapState({
             // arrow functions can make the code very succinct!
             count: state => state.count.count
         }),
-        ...mapGetters([
-            'medicationNames'
-        ])
+        ...mapGetters({
+            medicationNames: 'medications/medicationNames'
+        })
     }
 }
 </script>
