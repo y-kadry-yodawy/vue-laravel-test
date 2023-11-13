@@ -1,6 +1,18 @@
 <template>
-    <PrintoutInfoTable v-bind:dictionaries="info" />
+    <PrintoutHeader v-bind:header_details="header_details"/>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 15px;">
+        <PrintoutInfoTable v-bind:dictionaries="info" />
+        <PrintoutInfoTable v-bind:dictionaries="info" />
+    </div>
+    <div style="margin-top: 10px;">
+        <PrintoutNotes v-bind:notes="printout_notes"/>
+    </div>
     <MedicationsTable v-bind:medications="medications"></MedicationsTable>
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; column-gap: 15px;">
+        <div></div>
+        <PayementBreakdown v-bind:payment_breakdown="payment_breakdown"></PayementBreakdown>
+        <CopaymentDetails v-bind:copayment_details="copayment_details"></CopaymentDetails>
+    </div>
 </template>
 
 <script>
@@ -11,6 +23,10 @@ import { mapMutations } from 'vuex'
 import Popup from './modals/Popup.vue'
 import PrintoutInfoTable from './modals/PrintoutInfoTable.vue'
 import MedicationsTable from './modals/MedicationsTable.vue'
+import PayementBreakdown from './modals/PayementBreakdown.vue'
+import CopaymentDetails from './modals/CopaymentDetails.vue'
+import PrintoutHeader from './modals/PrintoutHeader.vue'
+import PrintoutNotes from './modals/PrintoutNotes.vue'
 
 export default {
     data() {
@@ -51,7 +67,7 @@ export default {
                     'total_approved': 30.00,
                     'discount': 0.00,
                     'net_amount': 30.00,
-                    'tags': ["TAG1", "TAG2"]
+                    'tags': []
                 },
                 {
                     'name': 'AUGMENTIN 1GM Tablet 14 Tablets / 2 STRIPS',
@@ -63,7 +79,7 @@ export default {
                     'total_approved': 30.00,
                     'discount': 0.00,
                     'net_amount': 30.00,
-                    'tags': ["TAG1", "TAG2"]
+                    'tags': []
                 },
                 {
                     'name': 'AUGMENTIN 1GM Tablet 14 Tablets / 2 STRIPS',
@@ -75,7 +91,7 @@ export default {
                     'total_approved': 30.00,
                     'discount': 0.00,
                     'net_amount': 30.00,
-                    'tags': ["TAG1", "TAG2"]
+                    'tags': []
                 },
                 {
                     'name': 'Otrivin 0.1% Adult Nasal Drops',
@@ -89,7 +105,29 @@ export default {
                     'net_amount': 0.00,
                     'tags': ["TAG1", "TAG2"]
                 },
-            ]
+            ],
+            payment_breakdown: [
+                { 'key': 'Total Price', 'value': 114.850 },
+                { 'key': 'Discount', 'value': 0.00 },
+                { 'key': 'Remaining Amount', 'value': 114.850 },
+                { 'key': 'Limit Surpass', 'value': 12.782 },
+                { 'key': 'Co-payment Amount', 'value': 20.00 }
+            ],
+            copayment_details: [
+                { 'key': 'By Patient', 'value': 20.20 },
+                { 'key': 'By Insurer', 'value': 24.20 }
+            ],
+            header_details: {
+                'timestamp': '31 Oct 23, 04:35 pm',
+                'company_logo': 'https://upload.wikimedia.org/wikipedia/commons/9/94/AXA_Logo.svg',
+                'title': 'Acute Claim Reference CR',
+                'form_type': 'Claim Form',
+                'status': 'Completed',
+            },
+            printout_notes: [
+                { 'key': 'Provider Notes', 'value': 'no diagnosis'},
+                { 'key': 'Payer Notes', 'value': 'centrum tablets uncovered' }
+            ],
         }
     },
     methods: {
@@ -109,9 +147,14 @@ export default {
     components: {
         Popup,
         PrintoutInfoTable,
-        MedicationsTable
+        MedicationsTable,
+        PayementBreakdown,
+        CopaymentDetails,
+        PrintoutHeader,
+        PrintoutNotes
     },
 }
 </script>
 
-<style></style>
+<style>
+</style>
