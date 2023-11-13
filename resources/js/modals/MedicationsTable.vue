@@ -35,7 +35,7 @@ export default {
           <td>{{ med.discount }}</td>
           <td>{{ med.net_amount }}</td>
         </tr>
-        <tr class="printout-medication-tags printout-tablerow-dark">
+        <tr class="printout-medication-tags">
           <span>Tags: </span>
           <span> {{ med.tags.join(', ') }}</span>
         </tr>

@@ -154,14 +154,12 @@ body {
     padding-right: 10px;
 }
 
-.printout-tablerow-dark{
-    background-color: #eeeef0;
-    print-color-adjust:exact;
-}
-
-.printout-tablerow-light {
+tr:nth-child(odd) {
     background-color: #ffffff;
-}
+ }
+ tr:nth-child(even) {
+    background-color: #eeeef0;
+ }
 
 .printout-tablerowformat {
     display: grid;
