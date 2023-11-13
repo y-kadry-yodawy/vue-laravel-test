@@ -1,5 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
 }
 
 .popup-container {
@@ -137,3 +139,64 @@ body {
     transform: scale(1.1);
 }
 
+.printout-infotable-container {
+    outline: 2px solid #9491a3;
+    border-radius: 15px;
+    display:inline-flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.printout-infotable-container tr{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.printout-tablerow-dark{
+    background-color: #eeeef0;
+    print-color-adjust:exact;
+}
+
+.printout-tablerow-light {
+    background-color: #ffffff;
+}
+
+.printout-tablerowformat {
+    display: grid;
+    grid-template-columns: 8fr 2fr 1fr 1fr 2fr 1fr 1fr 1fr;
+}
+
+.printout-tablerowformat th,td{
+    text-align: left;
+    padding: 0px 10px;
+}
+
+.printout-tablehead {
+    padding: 15px 0px;
+}
+
+.printout-tablehead th{
+    margin: auto 0px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.printout-medication-container {
+    outline: 2px solid #9491a3;
+    border-radius: 15px;
+    display:inline-flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.printout-medication-details {
+    height: 70px;
+    line-height: 70px;
+}
+
+.printout-medication-tags {
+    padding: 10px;
+}
