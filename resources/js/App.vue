@@ -1,5 +1,5 @@
 <template>
-    <PrintoutInfoTable v-bind:dictionaries="info"/>
+    <PrintoutInfoTable v-bind:dictionaries="info" />
     <MedicationsTable v-bind:medications="medications"></MedicationsTable>
 </template>
 
@@ -19,14 +19,14 @@ export default {
             localCount: 5,
             showPopup: false,
             info: [
-                {'key': 'Name', 'value': 'Fady Edward Sedky'},
-                {'key': 'Insurer', 'value': 'AXA'},
-                {'key': 'Policy Number', 'value': '45/XC/36139/0'},
-                {'key': 'Card Number', 'value': '45/XC/36139/0190/E/0'},
-                {'key': 'Co-payment', 'value': '20%'},
-                {'key': 'Provider Name', 'value': 'Yodawy'},
-                {'key': 'Prescriber', 'value': '--'},
-                {'key': 'Claim Number', 'value': '78915'}
+                { 'key': 'Name', 'value': 'Fady Edward Sedky' },
+                { 'key': 'Insurer', 'value': 'AXA' },
+                { 'key': 'Policy Number', 'value': '45/XC/36139/0' },
+                { 'key': 'Card Number', 'value': '45/XC/36139/0190/E/0' },
+                { 'key': 'Co-payment', 'value': '20%' },
+                { 'key': 'Provider Name', 'value': 'Yodawy' },
+                { 'key': 'Prescriber', 'value': '--' },
+                { 'key': 'Claim Number', 'value': '78915' }
             ],
             medications: [
                 {
@@ -39,7 +39,7 @@ export default {
                     'total_approved': 0.00,
                     'discount': 0.00,
                     'net_amount': 0.00,
-                    'tags': ["TAG1","TAG2"]
+                    'tags': ["TAG1", "TAG2"]
                 },
                 {
                     'name': 'Nexium 20 mg tablets',
@@ -51,7 +51,7 @@ export default {
                     'total_approved': 30.00,
                     'discount': 0.00,
                     'net_amount': 30.00,
-                    'tags': ["TAG1","TAG2"]
+                    'tags': ["TAG1", "TAG2"]
                 },
                 {
                     'name': 'AUGMENTIN 1GM Tablet 14 Tablets / 2 STRIPS',
@@ -63,7 +63,7 @@ export default {
                     'total_approved': 30.00,
                     'discount': 0.00,
                     'net_amount': 30.00,
-                    'tags': ["TAG1","TAG2"]
+                    'tags': ["TAG1", "TAG2"]
                 },
                 {
                     'name': 'AUGMENTIN 1GM Tablet 14 Tablets / 2 STRIPS',
@@ -75,7 +75,7 @@ export default {
                     'total_approved': 30.00,
                     'discount': 0.00,
                     'net_amount': 30.00,
-                    'tags': ["TAG1","TAG2"]
+                    'tags': ["TAG1", "TAG2"]
                 },
                 {
                     'name': 'Otrivin 0.1% Adult Nasal Drops',
@@ -87,7 +87,7 @@ export default {
                     'total_approved': 0.00,
                     'discount': 0.00,
                     'net_amount': 0.00,
-                    'tags': ["TAG1","TAG2"]
+                    'tags': ["TAG1", "TAG2"]
                 },
             ]
         }
@@ -107,10 +107,10 @@ export default {
         })
     },
     components: {
-    Popup,
-    PrintoutInfoTable,
-    MedicationsTable
-},
+        Popup,
+        PrintoutInfoTable,
+        MedicationsTable
+    },
 }
 </script>
 
